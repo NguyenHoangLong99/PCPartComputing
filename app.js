@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, '/controllers/public')));
 
 const Router = express.Router();
 
-// --------- filter Request
+
 app.use(
     (req, res, next) => {
         console.log("\n\n----------------\n TIME: ", Date.now());
@@ -20,7 +20,7 @@ app.use(
     }
 );
 
-// --------- ERROR Handle
+
 app.use(
   (err, req, res, next) => {
       console.log("\n ERR: ", Date.now());
@@ -34,7 +34,7 @@ function getHome(req, res) {
     res.sendFile(__dirname + "/controllers/public/home.html");
 }
 
-  //__dirname : It will resolve to your project folder.
+
 
 const HomeController = require("./controllers/HomeController");
 app.use("/home", HomeController);
